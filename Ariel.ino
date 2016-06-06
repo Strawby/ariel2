@@ -4,7 +4,7 @@ int speedpinA=9;//enable motor A
 int pinI3=12;//define I3 interface 
 int pinI4=13;//define I4 interface 
 int speedpinB=10;//enable motor B
-int spead =60;//define the spead of motor
+int spead =40;//define the spead of motor
 int incomingByte = 0; //for incoming serial data
  
 void setup()
@@ -18,7 +18,7 @@ void setup()
   Serial.begin(9600);
 }
  
-void forward()
+void left()
 {
      analogWrite(speedpinA,spead);//input a simulation value to set the speed
      analogWrite(speedpinB,spead);
@@ -27,7 +27,7 @@ void forward()
      digitalWrite(pinI2,LOW);//turn DC Motor A move anticlockwise
      digitalWrite(pinI1,HIGH);
 }
-void backward()
+void right()//
 {
      analogWrite(speedpinA,spead);//input a simulation value to set the speed
      analogWrite(speedpinB,spead);
@@ -36,7 +36,7 @@ void backward()
      digitalWrite(pinI2,HIGH);//turn DC Motor A move clockwise
      digitalWrite(pinI1,LOW);
 }
-void left()
+void forward()//
 {
      analogWrite(speedpinA,spead);//input a simulation value to set the speed
      analogWrite(speedpinB,spead);
@@ -45,7 +45,7 @@ void left()
      digitalWrite(pinI2,HIGH);//turn DC Motor A move clockwise
      digitalWrite(pinI1,LOW);
 }
-void right()
+void backward()//
 {
      analogWrite(speedpinA,spead);//input a simulation value to set the speed
      analogWrite(speedpinB,spead);
@@ -54,7 +54,7 @@ void right()
      digitalWrite(pinI2,LOW);//turn DC Motor A move clockwise
      digitalWrite(pinI1,HIGH);
 }
-void stop()
+void stop()//
 {
      digitalWrite(speedpinA,LOW);// Unenble the pin, to stop the motor. this should be done to avid damaging the motor. 
      digitalWrite(speedpinB,LOW);
